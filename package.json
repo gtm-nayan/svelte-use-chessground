@@ -1,6 +1,10 @@
 {
 	"name": "svelte-use-chessground",
 	"version": "0.0.1",
+	"license": "GPL v3",
+	"repository": {
+		"url": "https://github.com/gtm-nayan/svelte-use-chessground"
+	},
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
