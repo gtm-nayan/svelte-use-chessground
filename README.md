@@ -1,38 +1,40 @@
-# create-svelte
+A fork of @ornicar/chessground with some slight changes that allows it to be used with svelte through `use:`
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
+## Usage
 
-## Creating a project
+```html
+<script>
+	import Chessground from "svelte-use-chessground";
 
-If you're seeing this, you've probably already done this step. Congrats!
+	import "svelte-use-chessground/cgstyles/chessground.css";
+	import "svelte-use-chessground/cgstyles/theme.css"; //Or include the styles in any other way
 
-```bash
-# create a new project in the current directory
-npm init svelte@next
+	let cgApi;
+	let config = {
+		events: {
+			init: (api) => cgApi = api
+		}
+	}
+</script>
 
-# create a new project in my-app
-npm init svelte@next my-app
+<div class="blue merida">
+	<div use:Chessground={config}></div>
+	</div>
 ```
-
-> Note: the `@next` is temporary
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Once you've created a project and installed dependencies with `pnpm install`.
 
 ```bash
-npm run dev
+pnpm run dev
 
 # or start the server and open the app in a new browser tab
-npm run dev -- --open
+pnpm run dev -- --open
 ```
 
-## Building
-
-Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
+## Packaging
 
 ```bash
-npm run build
+pnpm run package
 ```
-
-> You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
