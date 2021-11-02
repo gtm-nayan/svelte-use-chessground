@@ -1,4 +1,4 @@
-A fork of @ornicar/chessground with some slight changes that allows it to be used with svelte through `use:`
+An adaptation of [@ornicar/chessground](https://github.com/ornicar/chessground) with some slight changes that allows it to be used with svelte through `use:`
 
 ## Usage
 
