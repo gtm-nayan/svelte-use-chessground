@@ -1,4 +1,4 @@
-An adaptation of [@ornicar/chessground](https://github.com/ornicar/chessground) with some slight changes that allows it to be used with svelte through `use:`
+An adaptation of https://github.com/ornicar/chessground with some slight changes that allows it to be used with svelte through `use:`
 
 ## Usage
 
@@ -23,6 +23,7 @@ An adaptation of [@ornicar/chessground](https://github.com/ornicar/chessground) 
 />
 <!-- You can also set the css variables for the URLs manually. See src/lib/cgstyles/chessground.css for the available ones.-->
 ```
+Demo here: https://svelte-use-chessground.netlify.app
 
 ## Developing
 
