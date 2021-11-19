@@ -1,5 +1,4 @@
 <script lang="ts">
-	export const ssr = false;
 	import Chessground from '$lib/index';
 	import '$lib/cgstyles/theme.css';
 	import '$lib/cgstyles/chessground.css';
