@@ -1,3 +1,4 @@
 import { Chessground } from './chessground/chessground';
+import cgStylesHelper from './chessground/stylesHelper';
 
-export default Chessground;
+export {Chessground, cgStylesHelper};
