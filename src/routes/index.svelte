@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Chessground from '$lib/index';
-	import '$lib/cgstyles/theme.css';
 	import '$lib/cgstyles/chessground.css';
 	import type { Config } from '$lib/chessground/config.js';
 
