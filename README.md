@@ -4,8 +4,8 @@ An adaptation of https://github.com/ornicar/chessground with some slight changes
 
 ```html
 <script lang="ts">
-	import { Chessground, cgStylesHelper } from '$lib/index';
-	import '$lib/cgstyles/chessground.css';
+	import { Chessground, cgStylesHelper } from 'svelte-use-chessground';
+	import 'svelte-use-chessground/cgstyles/chessground.css';
 	import type { Config } from '$lib/chessground/config.js';
 
 	let cgApi;
