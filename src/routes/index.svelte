@@ -12,6 +12,10 @@
 	};
 </script>
 
-<div class="blue merida">
-	<div use:Chessground={config} />
-</div>
+<div use:Chessground={config}/>
+
+<style>
+	div {
+		--cg-board-url: url("/images/board/blue.svg");
+	}
+</style>
