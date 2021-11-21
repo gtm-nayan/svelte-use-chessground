@@ -30,10 +30,13 @@
 	function handleMove(from: Key, to: Key, metadata: MoveMetadata) {
 		chess.move(`${from}${to}`, { sloppy: true });
 
-		let move = chess.move(randomMove(chess), { verbose: true });
-		cgApi.move(move.from, move.to);
-		cgApi.state.turnColor = 'white';
-		cgApi.state.movable.dests = validMovesAsDests(chess);
+		setTimeout(() => {
+			let move = chess.move(randomMove(chess), { verbose: true });
+			cgApi.move(move.from, move.to);
+			cgApi.state.turnColor = 'white';
+			cgApi.state.movable.dests = validMovesAsDests(chess);
+			cgApi.playPremove();
+		}, 3000);
 	}
 </script>
 
