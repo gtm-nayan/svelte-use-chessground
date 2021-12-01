@@ -1,16 +1,13 @@
-<script lang="ts">
+<script>
 	import { Chessground, cgStylesHelper } from '$lib/index';
 	import '$lib/cgstyles/chessground.css';
-	import type { Config } from '$lib/chessground/config.js';
 	import { Chess } from 'chess.js';
 	import { randomMove, validMovesAsDests } from './_utils';
-	import type { Api } from '$lib/chessground/api';
-	import type { Key, MoveMetadata } from '$lib/chessground/types';
 
 	let chess = Chess();
 
-	let cgApi: Api;
-	let config: Config = {
+	let cgApi;
+	let config = {
 		orientation: 'white',
 		movable: {
 			color: 'white',
@@ -27,7 +24,7 @@
 		}
 	};
 
-	function handleMove(from: Key, to: Key, metadata: MoveMetadata) {
+	function handleMove(from, to, metadata) {
 		chess.move(`${from}${to}`, { sloppy: true });
 
 		setTimeout(() => {

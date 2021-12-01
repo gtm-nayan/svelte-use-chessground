@@ -3,13 +3,12 @@ An adaptation of https://github.com/ornicar/chessground with some slight changes
 ## Usage
 
 ```html
-<script lang="ts">
+<script>
 	import { Chessground, cgStylesHelper } from 'svelte-use-chessground';
 	import 'svelte-use-chessground/cgstyles/chessground.css';
-	import type { Config } from '$lib/chessground/config.js';
 
 	let cgApi;
-	let config: Config = {
+	let config = {
 		orientation: 'white',
 		events: {
 			init: (api) => (cgApi = api)
