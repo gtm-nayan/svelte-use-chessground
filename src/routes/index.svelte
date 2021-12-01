@@ -49,3 +49,19 @@
 	}}
 	style="height: 640px; width: 640px;"
 />
+
+<style>
+	:global(.cg-wrap coords.files) {
+		bottom: 0;
+		text-align: right;
+	}
+
+	:global(.cg-wrap coords) {
+		font-weight: bold;
+	}
+
+	div {
+		--cg-ccw: #dee3e6;
+		--cg-ccb: #8ca2ad;
+	}
+</style>
