@@ -18,14 +18,14 @@ function setURLVars(
 	node: HTMLElement,
 	{ boardUrl, piecesFolderUrl, pieceFileExt = 'svg' }: Params
 ) {
-	let pieceNames = ['wK', 'wQ', 'wR', 'wB', 'wN', 'wP', 'bK', 'bQ', 'bR', 'bB', 'bN', 'bP'];
+	const PIECE_NAMES = ['wK', 'wQ', 'wR', 'wB', 'wN', 'wP', 'bK', 'bQ', 'bR', 'bB', 'bN', 'bP'];
 
 	if (boardUrl) {
 		node.style.setProperty('--cg-url-board', `url(${boardUrl})`);
 	}
 
 	if (piecesFolderUrl) {
-		for (let pieceName of pieceNames) {
+		for (const pieceName of PIECE_NAMES) {
 			node.style.setProperty(
 				`--cg-url-${pieceName}`,
 				`url(${piecesFolderUrl}/${pieceName}.${pieceFileExt})`
