@@ -47,4 +47,5 @@
 		piecesFolderUrl: '/images/pieces/merida',
 		boardUrl: '/images/board/blue.svg'
 	}}
+	style="height: 640px; width: 640px;"
 />
