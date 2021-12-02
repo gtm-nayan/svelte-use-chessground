@@ -15,12 +15,6 @@
 			events: {
 				after: handleMove
 			}
-		},
-		events: {
-			init: (api) => {
-				cgApi = api;
-				cgApi.state.movable.dests = validMovesAsDests(chess);
-			}
 		}
 	};
 
@@ -38,7 +32,7 @@
 </script>
 
 <div
-	use:Chessground={config}
+	use:Chessground={{ config, initializer: (api) => (cgApi = api) }}
 	class="blue"
 	use:cgStylesHelper={{
 		piecesFolderUrl: '/images/pieces/merida',

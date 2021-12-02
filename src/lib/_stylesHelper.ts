@@ -4,11 +4,14 @@ interface Params {
 	pieceFileExt?: string;
 }
 
-export default function (node: HTMLElement, params: Params) {
+export default function (
+	node: HTMLElement,
+	params: Params
+): { update: (newParams: Params) => void } {
 	setURLVars(node, params);
 
 	return {
-		update(newParams) {
+		update(newParams: Params) {
 			setURLVars(node, newParams);
 		}
 	};
