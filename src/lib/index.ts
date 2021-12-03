@@ -1,4 +1,4 @@
-import { default as _Chessground } from 'chessground/index';
+import { Chessground as _Chessground } from 'chessground/chessground';
 import cgStylesHelper from './_stylesHelper';
 import type { Api } from 'chessground/api';
 import type { Config } from 'chessground/config';
@@ -8,11 +8,11 @@ function Chessground(
 	{ config, initializer }: CgActionParams
 ): { update: (params: CgActionParams) => void; destroy: () => void } {
 	let api: Api;
-	function update(params) {
+	function update(params: CgActionParams) {
 		api = _Chessground(node, params.config);
-		initializer?.(api);
+		params.initializer?.(api);
 	}
-	update(config);
+	update({ config, initializer });
 
 	return {
 		update,
@@ -24,8 +24,8 @@ function Chessground(
 
 type initFn = (api: Api) => void;
 interface CgActionParams {
-	config: Config;
-	initializer: initFn;
+	config?: Config;
+	initializer?: initFn;
 }
 
 export { Chessground, cgStylesHelper };
