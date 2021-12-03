@@ -1,11 +1,9 @@
 <script lang="ts">
 	import { Chessground, cgStylesHelper } from '$lib/index';
 	import '$lib/cgstyles/chessground.css';
-	import type { Config } from '$lib/chessground/config.js';
 	import { Chess } from 'chess.js';
 	import { randomMove, validMovesAsDests } from './_utils';
-	import type { Api } from '$lib/chessground/api';
-	import type { Key, MoveMetadata } from '$lib/chessground/types';
+	import type { Config, Api } from '$lib/index';
 
 	let chess = Chess();
 
@@ -18,16 +16,10 @@
 			events: {
 				after: handleMove
 			}
-		},
-		events: {
-			init: (api) => {
-				cgApi = api;
-				cgApi.state.movable.dests = validMovesAsDests(chess);
-			}
 		}
 	};
 
-	function handleMove(from: Key, to: Key, metadata: MoveMetadata) {
+	function handleMove(from, to, metadata) {
 		chess.move(`${from}${to}`, { sloppy: true });
 
 		setTimeout(() => {
@@ -38,10 +30,16 @@
 			cgApi.playPremove();
 		}, 3000);
 	}
+
+	function init(api: Api) {
+		api.state.movable.dests = validMovesAsDests(chess);
+		cgApi = api;
+		console.log(cgApi);
+	}
 </script>
 
 <div
-	use:Chessground={config}
+	use:Chessground={{ config, initializer: init }}
 	class="blue"
 	use:cgStylesHelper={{
 		piecesFolderUrl: '/images/pieces/merida',

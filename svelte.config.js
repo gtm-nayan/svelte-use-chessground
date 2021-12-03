@@ -12,8 +12,8 @@ const config = {
 		target: '#svelte',
 		adapter: adapter(),
 		vite: {
-			server: {
-				fs: ['..']
+			ssr: {
+				noExternal: ["chessground"]
 			}
 		}
 	}
