@@ -1,13 +1,14 @@
-<script>
+<script lang="ts">
 	import { Chessground, cgStylesHelper } from '$lib/index';
 	import '$lib/cgstyles/chessground.css';
 	import { Chess } from 'chess.js';
 	import { randomMove, validMovesAsDests } from './_utils';
+	import type { Config, Api } from '$lib/index';
 
 	let chess = Chess();
 
-	let cgApi;
-	let config = {
+	let cgApi: Api;
+	let config: Config = {
 		orientation: 'white',
 		movable: {
 			color: 'white',
@@ -29,10 +30,16 @@
 			cgApi.playPremove();
 		}, 3000);
 	}
+
+	function init(api: Api) {
+		api.state.movable.dests = validMovesAsDests(chess);
+		cgApi = api;
+		console.log(cgApi);
+	}
 </script>
 
 <div
-	use:Chessground={{ config, initializer: (api) => (cgApi = api) }}
+	use:Chessground={{ config, initializer: init }}
 	class="blue"
 	use:cgStylesHelper={{
 		piecesFolderUrl: '/images/pieces/merida',
