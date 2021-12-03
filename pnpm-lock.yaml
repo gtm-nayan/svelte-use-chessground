@@ -20,7 +20,6 @@ specifiers:
   typescript: ^4.4.3
 
 dependencies:
-  chess.js: 0.12.0
   chessground: 8.1.7
 
 devDependencies:
@@ -28,6 +27,7 @@ devDependencies:
   '@sveltejs/kit': 1.0.0-next.201_svelte@3.44.1
   '@typescript-eslint/eslint-plugin': 4.33.0_cc617358c89d3f38c52462f6d809db4c
   '@typescript-eslint/parser': 4.33.0_eslint@7.32.0+typescript@4.4.4
+  chess.js: 0.12.0
   eslint: 7.32.0
   eslint-config-prettier: 8.3.0_eslint@7.32.0
   eslint-plugin-svelte3: 3.2.1_eslint@7.32.0+svelte@3.44.1
@@ -437,7 +437,7 @@ packages:
 
   /chess.js/0.12.0:
     resolution: {integrity: sha512-eF1xf4j88r/AwIRxqV1FXZbVgMt4yUx05xrL+ZMqUrY+snFrUxGVHs0VgEd3AvngujDE9th7XZqqCwEKEQ7mWQ==}
-    dev: false
+    dev: true
 
   /chessground/8.1.7:
     resolution: {integrity: sha512-YpFFxsA+WrfAuCCudLennESuMEaZVnC8HJNVUvBJYPdtQSTOx5D7hZhtjWuwEe9jJP9bHhA6mOYOT6NmfS84qQ==}
