@@ -13,7 +13,7 @@ const config = {
 		adapter: adapter(),
 		vite: {
 			ssr: {
-				noExternal: ["chessground"]
+				noExternal: ['chessground']
 			}
 		}
 	}
