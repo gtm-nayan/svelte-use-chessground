@@ -24,7 +24,7 @@ The first two can be set manually or you can use the cgStylesHelper action to se
 	let cgApi;
 	let config = {};
 
-	function initizalizer(api) {
+	function initializer(api) {
 		cgApi = api;
 		// A named function might not be necessary but I've encountered infinite loops while using an inline initializer function.
 	}
