@@ -1,3 +1,8 @@
+## Maintenance Status
+This repository and the package are not being actively maintained. Consider using alternatives such as:
+- [gtim/svelte-chessground](https://github.com/gtim/svelte-chessground/)
+
+
 A wrapper around https://github.com/ornicar/chessground that allows it to be used with svelte through `use:`
 
 ## Usage
